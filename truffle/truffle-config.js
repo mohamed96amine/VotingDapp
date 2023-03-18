@@ -79,7 +79,7 @@ module.exports = {
         ),
       network_id: 5, // Goerli's id
       confirmations: 2, // # of confirmations to wait between deployments. (default: 0)
-      // timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
+      timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true,
       // gas: "30000000", // blocklimit
       // gasPrice: "43271607952",
