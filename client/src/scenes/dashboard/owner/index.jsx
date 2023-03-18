@@ -53,7 +53,7 @@ const OwnerDashboard = () => {
           </Item>
         </Grid>
         <Grid item xs={4}>
-          {currentVotingStatus === 0 && (
+          {currentVotingStatus == 0 && (
             <Item>
               <AddVoter />
             </Item>
