@@ -131,7 +131,7 @@ const VotingTimeline = () => {
           </TimelineContent>
         </TimelineItem>
       </Timeline>
-      {myself && myself.isOwner && currentVotingStatus != 5 && (
+      {currentVotingStatus != 5 && myself && myself.isOwner && (
         <Box display="flex" justifyContent="center" alignItems="center">
           <Button
             variant="contained"
