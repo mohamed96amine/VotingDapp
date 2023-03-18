@@ -36,7 +36,8 @@ export default function ErrorRadios() {
           setHelperText("Congrats ! You voted !");
           window.location.reload(false);
         } else {
-          throw "You already voted!";
+          const errorMessage =  {  message : "You already voted!" };
+          throw errorMessage;
         }
       } catch (err) {
         setHelperText("You did not vote !" + err.message);
