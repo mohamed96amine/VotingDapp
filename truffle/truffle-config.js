@@ -41,10 +41,11 @@
  * https://trufflesuite.com/docs/truffle/getting-started/using-the-truffle-dashboard/
  */
 
-// require('dotenv').config();
-// const { MNEMONIC, PROJECT_ID } = process.env;
+require('dotenv').config();
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+const mnemonic = process.env["MNEMONIC"];
+const projet_id = process.env["INFURA_PROJECT_ID"];
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
   /**
@@ -69,6 +70,28 @@ module.exports = {
      host: "127.0.0.1",     // Localhost (default: none)
      port: 8545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
+    },
+    goerli: {
+      provider: () =>
+        new HDWalletProvider(
+          mnemonic,
+          `https://goerli.infura.io/v3/${projet_id}`
+        ),
+      network_id: 5, // Goerli's id
+      confirmations: 2, // # of confirmations to wait between deployments. (default: 0)
+      // timeoutBlocks: 200, // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true,
+      // gas: "30000000", // blocklimit
+      // gasPrice: "43271607952",
+      from: "0xcA227EE2ACD18272F5D5338c1d4Fc294AA826Bc8"
+    },
+    matic: {
+      provider: () => new HDWalletProvider(mnemonic, `https://rpc-mumbai.maticvigil.com${projet_id}`),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      from: "0xcA227EE2ACD18272F5D5338c1d4Fc294AA826Bc8"
     },
     //
     // An additional network, but with some advanced options…
@@ -140,4 +163,3 @@ module.exports = {
   //   }
   // }
 };
-  
