@@ -8,8 +8,7 @@ The smart contract was deployed on Goerli. The front-end was deployed on vercel.
 
 To access the app visit following link : https://voting-dapp-a5ak.vercel.app/
 
-Demo video in french : https://drive.google.com/file/d/1nMss4kFHXgCqsWKh6aMJQtwBKqhMcm-s/view?usp=share_link
-
+Demo video in french : https://youtu.be/FOqMAMVwq-8
 ## Installation
 
 
