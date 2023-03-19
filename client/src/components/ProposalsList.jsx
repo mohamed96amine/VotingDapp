@@ -21,7 +21,7 @@ export default function ErrorRadios() {
     setError(false);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (value === "") {
@@ -29,12 +29,11 @@ export default function ErrorRadios() {
       setError(false);
     } else {
       try {
-        const result = blockchainService.setVote(value, myself.address);
+        const result = await blockchainService.setVote(value, myself.address);
         console.log(result);
         if (result.status) {
           setError(false);
           setHelperText("Congrats ! You voted !");
-          window.location.reload(false);
         } else {
           const errorMessage =  {  message : "You already voted!" };
           throw errorMessage;
